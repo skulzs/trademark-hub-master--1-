@@ -1,0 +1,11 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="TrademarkHub.Views.AppsView"
+             xmlns:vm="clr-namespace:TrademarkHub.Views"
+             x:DataType="vm:AppsViewModel">
+  <StackPanel Margin="20" Spacing="8">
+    <TextBlock Text="Apps" Foreground="White" FontSize="20"/>
+    <!-- Bind to the AppsViewModel's GoHome command which proxies to the host's command -->
+    <Button Width="250" Height="150" Content="Home" Command="{Binding GoHome}"/>
+  </StackPanel>
+</UserControl>

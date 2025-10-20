@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rxui="clr-namespace:Avalonia.ReactiveUI;assembly=Avalonia.ReactiveUI"
+        xmlns:trademarkHub="clr-namespace:TrademarkHub"
+        x:Class="TrademarkHub.MainWindow"
+        x:DataType="trademarkHub:MainWindowViewModel"
+        CanResize="False"
+        Width="800" Height="500" Background="#FF539CE0" Title="Trademark Hub">
+  <Grid>
+    <TextBlock x:Name="DayText"   FontSize="14" Foreground="White"
+               HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,8,0"/>
+    <TextBlock x:Name="ClockText" FontSize="16" Foreground="White"
+               HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,28,8,0"/>
+
+    <StackPanel Orientation="Horizontal" Spacing="10"
+            HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,30"
+            IsVisible="{Binding IsMainMenuVisible}">
+      <Button Width="250" Height="150" Content="Home" Command="{Binding GoHome}"/>
+      <Button Width="250" Height="150" Content="Apps" Command="{Binding GoToApps}"/>
+    </StackPanel>
+
+    <rxui:RoutedViewHost Router="{Binding Router}"/>
+  </Grid>
+</Window>
